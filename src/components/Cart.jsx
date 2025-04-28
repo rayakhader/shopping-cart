@@ -18,7 +18,7 @@ function Cart({ items, onRemoveItem }) {
                 </ul>
             )
             }
-            <p>Total: ${totalPrice}</p>
+            <p>Total: ${totalPrice.toFixed(2)}</p>
 
         </div >
     )

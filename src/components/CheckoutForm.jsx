@@ -5,6 +5,9 @@ function CheckoutForm() {
     const [email, setEmail] = useState('')
     function handleSubmit(e) {
         e.preventDefault();
+        alert(`Order placed!\nName: ${name}\nEmail: ${email}`)
+        setName('')
+        setEmail('')
     }
     return (
         <form className='checkout-form' onSubmit={(e) => handleSubmit(e)}>
