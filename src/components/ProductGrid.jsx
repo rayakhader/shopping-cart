@@ -7,7 +7,7 @@ function ProductGrid({ onAddToCart }) {
         <div>
             {
                 products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                 ))
             }
 

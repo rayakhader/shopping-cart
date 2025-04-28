@@ -1,13 +1,24 @@
 
+import { useState } from 'react';
 import './App.css';
-import ProductGrid from './component/ProductGrid';
+import ProductGrid from './components/ProductGrid';
+import Cart from './components/Cart';
 function App() {
+  const[cartItems, setCartItems] = useState([])
+  function handleAddToCart(product){
+    setCartItems([
+      ...cartItems,
+      product
+    ])
+
+  }
  
   return (
     <div className="App">
       <h1>Shopping Cart</h1>
       <div>
-        <ProductGrid />
+        <ProductGrid onAddToCart={handleAddToCart}/>
+        <Cart items={cartItems} />
       </div>
       
     </div>
