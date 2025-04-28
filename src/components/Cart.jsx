@@ -1,8 +1,18 @@
 import React from 'react'
 
-function Cart() {
+function Cart({ items }) {
     return (
-        <div>
+        <div className='cart'>
+            <h2>Cart</h2>
+            {items.length === 0 ? (
+                <p>No Items in cart. </p>
+            ) : (
+                <ul>
+                    {items.map((item) => {
+                        return <li key={item.id}>{item.name} - ${item.price}</li>
+                    })}
+                </ul>
+            )}
 
         </div>
     )
