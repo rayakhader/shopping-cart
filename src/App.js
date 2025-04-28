@@ -10,7 +10,9 @@ function App() {
       ...cartItems,
       product
     ])
-
+  }
+  function handleRemoveItem(product){
+    setCartItems(cartItems.filter((item)=>item.id !== product.id))
   }
  
   return (
@@ -18,7 +20,7 @@ function App() {
       <h1>Shopping Cart</h1>
       <div>
         <ProductGrid onAddToCart={handleAddToCart}/>
-        <Cart items={cartItems} />
+        <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
       </div>
       
     </div>

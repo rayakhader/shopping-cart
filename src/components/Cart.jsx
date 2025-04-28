@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart({ items }) {
+function Cart({ items, onRemoveItem }) {
     return (
         <div className='cart'>
             <h2>Cart</h2>
@@ -8,13 +8,17 @@ function Cart({ items }) {
                 <p>No Items in cart. </p>
             ) : (
                 <ul>
-                    {items.map((item) => {
-                        return <li key={item.id}>{item.name} - ${item.price}</li>
-                    })}
+                    {items.map((item) => (
+                        <li key={item.id}>
+                            {item.name} - ${item.price}
+                            <button onClick={() => onRemoveItem(item)}>Remove</button>
+                        </li>
+                    ))}
                 </ul>
-            )}
+            )
+            }
 
-        </div>
+        </div >
     )
 }
 
