@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import ProductGrid from './components/ProductGrid';
 import Cart from './components/Cart';
+import CheckoutForm from './components/CheckoutForm';
 function App() {
   const[cartItems, setCartItems] = useState([])
   function handleAddToCart(product){
@@ -21,6 +22,7 @@ function App() {
       <div>
         <ProductGrid onAddToCart={handleAddToCart}/>
         <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
+        <CheckoutForm />
       </div>
       
     </div>
