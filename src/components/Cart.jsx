@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Cart({ items, onRemoveItem }) {
+    const totalPrice = items.reduce((acc, item) => acc + item.price, 0)
     return (
         <div className='cart'>
             <h2>Cart</h2>
@@ -17,6 +18,7 @@ function Cart({ items, onRemoveItem }) {
                 </ul>
             )
             }
+            <p>Total: ${totalPrice}</p>
 
         </div >
     )
