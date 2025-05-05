@@ -10,7 +10,7 @@ function CheckoutForm() {
         setEmail('')
     }
     return (
-        <form className='checkout-form' onSubmit={(e) => handleSubmit(e)}>
+        <form className='checkout-form' onSubmit={handleSubmit}>
             <h2>Checkout</h2>
             <input type="text" name='name' placeholder='Your Name...' value={name} onChange={(e) => setName(e.target.value)} required />
             <input type="email" name='email' placeholder='Your Email...' value={email} onChange={(e) => setEmail(e.target.value)} required />
