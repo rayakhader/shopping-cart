@@ -1,13 +1,12 @@
 import React from 'react'
-import products from '../data/products'
 import ProductCard from './ProductCard'
 
-function ProductGrid({ onAddToCart }) {
+function ProductGrid({ products, cartItems, onAddToCart }) {
     return (
-        <div>
+        <div className='product-grid'>
             {
                 products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} cartItems={cartItems} product={product} onAddToCart={onAddToCart} />
                 ))
             }
 
